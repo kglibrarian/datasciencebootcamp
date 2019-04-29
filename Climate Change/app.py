@@ -99,7 +99,7 @@ def station():
 @app.route("/api/v1.0/tobs")
 def temperature():
     """Return a JSON list of Temperature Observations (tobs) for the previous year"""
-    results = results = session.query(Measurement.date, Measurement.station, Measurement.tobs).\
+    results = session.query(Measurement.date, Measurement.station, Measurement.tobs).\
     filter(Measurement.date > "2016-08-22")
     
        
