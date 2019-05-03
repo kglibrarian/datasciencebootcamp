@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Web Visualization Dashboard</title>
+    <title>Latitude Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -17,8 +17,9 @@
         <header class="header border-bottom">
             <div class="container">  
                 <div class="row">
-                    <div class="name col-xs-12 col-sm-7 col-md-4 text-nowrap py-2 ">   
-                        <p class="h1 text-center"> Data Dashboard</p> 
+                    <div class="name col-xs-12 col-sm-7 col-md-4 text-nowrap text-center py-2 ">   
+                        <!-- <p class="h1 text-center"> Data Dashboard</p> -->
+                        <a class="h1" href="index.html">Lattitude</a>
                     </div>
                     
                     <nav class="col-xs-12 col-sm-4 col-md-4 offset-md-4 text-nowrap"> 
@@ -52,24 +53,20 @@
                     <div class ="about"> 
                         <div class="row"> 
                             <div class="col-12 border-bottom pt-3">
-                                <h2>Effects of Latitude</h2>
+                                <h2>Cloudiness vs. Latitude</h2>
                             </div>
                         
                             <div class="col-12 pt-3">
-                                <img src="./assets/images/NASA_image.jpg" alt="photo of Earth" title="photo of Earth" class="img-fluid float-left image"/>
-                                <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. 
-                                    We randomly select 500+ cities across the world and use a series of 
-                                    successive API calls to the OpenWeatherAPI to collection weather data for each city</p>
+                                <img src="./assets/images/CloudinessvsLatitude.png" alt="Cloudiness vs. Latitude" title="Cloudiness vs. Latitude" class="img-fluid big-image"/>
+                                <p>The sample of 500+ cities show that regardless of latitude, the cities 
+                                    experience varying amounts of cloudiness. There appears to be 
+                                    little connection between cloudiness and latitude. "Cloud cover 
+                                    (also known as cloudiness) refers to the fraction of the sky 
+                                    obscured by clouds when observed from a particular location.
+                                    The cloud cover is correlated to the sunshine duration as the 
+                                    least cloudy locales are the sunniest ones while the cloudiest 
+                                    areas are the least sunny places(Wikipedia)."</p>
                               
-                                <p class ="pt-4">We used Matplotlib to create scatter plots showing relationships 
-                                        between: </p>
-                                    <ul>
-                                        <li>Temperature (F) vs. Latitude</li>
-                                        <li>Humidity (%) vs. Latitude </li>
-                                        <li>Cloudiness (%) vs. Latitude</li>
-                                        <li>Wind Speed (mph) vs. Latitude</li>
-                                    </ul>
-                                <p>Also included in this dashboard are descriptions of observable trends based on the data. </p>
                             </div>
                         </div>
                     

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Web Visualization Dashboard</title>
+    <title>Latitude Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -17,8 +17,9 @@
         <header class="header border-bottom">
             <div class="container">  
                 <div class="row">
-                    <div class="name col-xs-12 col-sm-7 col-md-4 text-nowrap py-2 ">   
-                        <p class="h1 text-center"> Data Dashboard</p> 
+                    <div class="name col-xs-12 col-sm-7 col-md-4 text-nowrap text-center py-2 ">   
+                       <!-- <p class="h1 text-center"> Data Dashboard</p> -->
+                        <a class="h1" href="index.html">Lattitude</a>
                     </div>
                     
                     <nav class="col-xs-12 col-sm-4 col-md-4 offset-md-4 text-nowrap"> 
@@ -49,56 +50,50 @@
         
         <section class="container section pb-5">  
             <div class="row justify-content-around">
-                <article class="col-xs-12 col-sm-12 col-md-7 article mt-5"> 
+                <article class="col-xs-12 col-sm-12 col-md-10 article mt-5"> 
                     <div class ="about"> 
                         <div class="row"> 
                             <div class="col-12 border-bottom pt-3">
-                                <h2>Effects of Latitude</h2>
+                                <h2>Comparison: Latitude vs. ... </h2>
                             </div>
                         
                             <div class="col-12 pt-3">
-                                <img src="./assets/images/NASA_image.jpg" alt="photo of Earth" title="photo of Earth" class="img-fluid float-left image"/>
-                                <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. 
-                                    We randomly select 500+ cities across the world and use a series of 
-                                    successive API calls to the OpenWeatherAPI to collection weather data for each city</p>
-                              
-                                <p class ="pt-4">We used Matplotlib to create scatter plots showing relationships 
-                                        between: </p>
-                                    <ul>
-                                        <li>Temperature (F) vs. Latitude</li>
-                                        <li>Humidity (%) vs. Latitude </li>
-                                        <li>Cloudiness (%) vs. Latitude</li>
-                                        <li>Wind Speed (mph) vs. Latitude</li>
-                                    </ul>
-                                <p>Also included in this dashboard are descriptions of observable trends based on the data. </p>
+                                <p class="font-italic">Click on any plot to get an indepth analysis.</p>
+                                <div class = "row">
+                                    <div class = "col-xs-12 col-sm-12 col-md-6 pb-4">
+                                        <h3 class = "text-center">vs. Wind Speed</h3>
+                                        <a href="windspeed.html">
+                                            <img src="./assets/images/WindSpeedvsLatitude.png" alt="scatter plot of Wind Speed versus Latitude" title="scatter plot of Wind Speed versus Latitude" class="medium-image"/>
+                                        </a>
+                                    </div>
+                                    <div class = "col-xs-12 col-sm-12 col-md-6 pb-4">
+                                        <h3 class = "text-center">vs. Cloudiness</h3>
+                                        <a href="cloudiness.html">
+                                            <img src="./assets/images/CloudinessvsLatitude.png" alt="scatter plot of Cloudiness versus Latitude" title="scatter plot of Cloudiness versus Latitude" class="medium-image"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <div class = "col-xs-12 col-sm-12 col-md-6 pb-4">
+                                        <h3 class = "text-center">vs. Humidity</h3>
+                                        <a href="humidty.html">
+                                            <img src="./assets/images/HumidityvsLatitude.png" alt="scatter plot of Humidity versus Latitude" title="scatter plot of Humidity versus Latitude" class="medium-image"/>
+                                        </a>
+                                    </div>
+                                    <div class = "col-xs-12 col-sm-12 col-md-6 pb-4">
+                                        <h3 class = "text-center">vs. Max Temperature</h3>
+                                        <a href="temperature.html">
+                                            <img src="./assets/images/MaxTempvsLatitude.png" alt="scatter plot of Maximum Temperature versus Latitude" title="scatter plot of Maximum Temperature versus Latitude" class="medium-image"/>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     
                     </div>
                 </article>
 
-                <aside class="col-xs-12 col-sm-12 col-md-4 aside mt-5 pb-3 align-self-start">  
-                    <div class="connect">
-                        <div class="row">
-                            <div class="col-12 border-bottom pt-3">
-                                <h2>Visualizations</h2>
-                            </div>
-                        
-                            <div class ="contact-info col-12 pt-3 d-flex justify-content-around"> 
-                             
-                                <div class = "row">
-                                    <img src="./assets/images/WindSpeedvsLatitude.png" alt="scatter plot of Wind Speed versus Latitude" title="scatter plot of Wind Speed versus Latitude" class="image"/>
-                                    <img src="./assets/images/CloudinessvsLatitude.png" alt="scatter plot of Cloudiness versus Latitude" title="scatter plot of Cloudiness versus Latitude" class="image"/>
-                                </div>
-                                <div class = "row">
-                                    <img src="./assets/images/HumidityvsLatitude.png" alt="scatter plot of Humidity versus Latitude" title="scatter plot of Humidity versus Latitude" class="image"/>
-                                    <img src="./assets/images/MaxTempvsLatitude.png" alt="scatter plot of Maximum Temperature versus Latitude" title="scatter plot of Maximum Temperature versus Latitude" class="image"/>
-                                </div>
-                                
-                            </div> 
-                        </div>
-                    </div>
-                </aside>
+                
             </div>
             <!--<div><p>Image Source <a href="https://www.weather.gov/jetstream/satellite">NASA image from ATS-I, December 11, 1966, the first geostationary satellite. </a></p></div>-->
         </section>
