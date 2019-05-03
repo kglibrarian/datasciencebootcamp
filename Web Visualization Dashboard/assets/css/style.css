@@ -65,7 +65,8 @@ img.medium-image {
 
 table {
     table-layout: fixed;
-    width: 100%;   
+    width: 100%;
+    overflow:auto;    
 }
 
 th,td {
