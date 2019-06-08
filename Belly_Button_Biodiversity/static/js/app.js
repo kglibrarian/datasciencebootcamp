@@ -46,12 +46,14 @@ function buildCharts(sample) {
    var url = "/samples/"+ sample;
    d3.json(url).then(function(response) {
      //console.log(response)
-     var pieData = (Object.values(response))
-     //console.log(pieData[2])
-     var pieChart = d3.select("#pie");
-     var allIDs = pieData[0]; //key
-     var allLabels = pieData[1];
-     var allValues= pieData[2]; //values
+     var chartData = (Object.values(response))
+     //console.log(chartData[2])
+     //var pieChart = d3.select("#pie");
+     // remove any children from the list to
+    //pieChart.html("");
+     var allIDs = chartData[0]; //key
+     var allLabels = chartData[1];
+     var allValues= chartData[2]; //values
      var result = {};
      allIDs.forEach((allIDs, i) => result[allIDs] = allValues[i]);
      //console.log(result);
@@ -75,22 +77,56 @@ function buildCharts(sample) {
      };
      console.log(pieValues);
        
-    var data = [{
+    var pieChartData = [{
       labels:pieLabels,
       values:pieValues,
       type: 'pie'
     }];
 
-    var layout = {
+    var pieChartLayout = {
+      title: "Top 10 Bacteria in #" + sample + "'s belly button by percent",
       height: 400,
       width: 500
     };
     
     
-    Plotly.newPlot(pie, data, layout);
-  
+    Plotly.newPlot(pie, pieChartData, pieChartLayout);
+    console.log("after pie")
    // @TODO: Build a Bubble Chart using the sample data
-   
+
+   //var bubbleChart = d3.select("#bubble");
+   //var bubbleTest = document.getElementById('bubble');
+   var trace1 = {
+    x: allIDs,
+    y: allValues,
+    text: allLabels,
+    mode: 'markers',
+    marker: {
+      size: allValues,
+    //   color: ['rgb(93, 164, 214)', 
+    //     'rgb(255, 144, 14)',  
+    //     'rgb(44, 160, 101)', 
+    //     'rgb(255, 65, 54)',
+    //     'rgb(80, 248, 236)',
+    //     'rgb(126, 229, 174)',
+    //     'rgb(222, 239, 74)',
+    //     'rgb(239, 2, 217)',
+    //     'rgb(79, 35, 37)',
+    //     'rgb(139, 5, 90)'],
+     }
+  };
+  
+  var bubbleChartData = [trace1];
+  
+  var bubbleChartLayout = {
+    title: 'Bacteria Amount in #' + sample + "'s belly button",
+    showlegend: false,
+    height: 600,
+    width: 1000,
+     
+  };
+  
+  Plotly.newPlot(bubble, bubbleChartData, bubbleChartLayout);
 
    })
   
